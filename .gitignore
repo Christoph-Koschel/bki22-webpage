@@ -1,4 +1,4 @@
 dist
-*.tsb
+src/assets/libs
 .idea
 build
