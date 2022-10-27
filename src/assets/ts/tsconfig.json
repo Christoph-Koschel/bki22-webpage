@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "es2020",
+        "moduleResolution": "node",
+        "declaration": true,
+        "removeComments": true,
+        "outDir": "build/src",
+        "declarationDir": "build/header"
+        
+    },
+    "include": [
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\ui.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\types.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\specialElements.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\rout.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\index.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\loader.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\utils.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\page.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\index.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global_search.ts"
+
+    ],
+    "exclude": [
+        "lib"
+    ]
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>CLI-WIKI / Switches</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/index.js"></script>
+    </head>
+    <body class="--dark-mode">
+        <button class="switch-theme">
+            Toggle Darkmode
+        </button>
+        <h1>Switch Befehle</h1>
+        <a href="index.html">Back ...</a>
+
+        <div class="show-group" trigger-element=".trigger" target-element=".target">
+            <button class="trigger">
+                Show
+            </button>
+            <div class="target">
+                Hello World
+            </div>
+        </div>
+
+        <table border>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>switch> enable</td>
+                <td>
+                    Wechselt in denn Administrator Modus
+                </td>
+            </tr>
+            <tr>
+                <td>switch# disable</td>
+                <td>
+                    Wechselt in denn Benutzer Modus
+                </td>
+            </tr>
+            <tr>
+                <td>switch# configure terminal</td>
+                <td>
+                    Wechselt in denn Konfigurations Modus mit dem Terminal Interface
+                </td>
+            </tr>
+            <tr>
+                <td>switch# hostname &gt;name></td>
+                <td>
+                    Setzt den Hostname
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)# enable secret &lt;psw></td>
+                <td>
+                    Setzt <i>&lt;psw></i> als Administrator password
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)# line console &lt;index></td>
+                <td>
+                    Wechselt die Konfiguaration Optionen für den Consolen Input mit der Nummer &lt;index>
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config-line)# password &lt;psw></td>
+                <td>
+                    Initzalisiert ein Passwort &lt;psw>
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config-line)# login</td>
+                <td>
+                    Setzt das Initalisierte Passwort als Login Passwort
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)# end</td>
+                <td>
+                    Beendet den Konfigurations Modus und Wechselt in den Administrator Modus zurück
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;Modus*>exit</td>
+                <td>
+                    Wechselt denn Modus zum letzen Modus zurück (Beendet den Prozess)
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)#line vty 0 4</td>
+                <td>
+                    Selektiert denn Port 0 bis 4 zu einer Gruppe
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)#no ip domain lookup</td>
+                <td>
+                    Versucht nicht mehr bei einer Fehleingabe eine Namensauflösung durchzuführen
+                </td>
+            </tr>
+            <tr>
+                <td>switch(line)#password &gt;password></td>
+                <td>
+                    Setzt das Passwort vom Interface
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)#interface vlan 1</td>
+                <td>
+                    Wählt das erste vlan interface aus un wechselt in den Konfigurations Modus
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config-if)#ip address &lt;ip> &lt;submask></td>
+                <td>
+                    Setzt die Ip & Submask von dem Ausgewählten Interface
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config-if)# no shutdown</td>
+                <td>
+                    Verhindert dass das interface herunterfährt
+                </td>
+            </tr>
+            <tr>
+                <td>switch(config)#enable password encryption</td>
+                <td>
+                    Aktiviert die Passwort verschlüssenlung
+                </td>
+            </tr>
+            <tr>
+                <td>switch#show running-config</td>
+                <td>
+                    Zeigt alle Konfiguarationen des Switches
+                </td>
+            </tr>
+
+        </table>
+
+        <a href="index.html">Back ...</a>
+    </body>
+</html>

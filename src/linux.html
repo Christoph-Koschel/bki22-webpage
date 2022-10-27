@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>CLI-WIKI</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/index.js"></script>
+    </head>
+    <body class="--dark-mode">
+        <button class="switch-theme">
+            Toggle Darkmode
+        </button>
+        <h1>Linux Befehle</h1>
+        <a href="index.html">Back ...</a>
+
+        <table border>
+            <tr>
+                <td>cd &lt;dir|..></td>
+                <td><b>c</b>hange <b>d</b>irectory<br>Changes the current directory<br>
+                '<b>..</b>' >> Geht ein Ordner zurück</td>
+            </tr>
+            <tr>
+                <td>cat &lt;file></td>
+                <td>
+                    Zeigt den Inhalt einer Datei. (Funktioniert nur mit ASCII Dateien)
+                </td>
+            </tr>
+            <tr>
+                <td>touch &lt;file></td>
+                <td>
+                    Erzeug einen neue blank datei falls diese nicht existiert 
+                </td>
+            </tr>
+            <tr>
+                <td>rm &lt;item></td>
+                <td>
+                    Entfernt ein fs item<br>
+                    Ordner müssen leer sein
+                </td>
+            </tr>
+            <tr>
+                <td>rmdir &lt;folder></td>
+                <td>
+                    Entfernt den Ordner &lt;folder> falls dieser leer ist
+                </td>
+            </tr>
+            <tr>
+                <td>ls &lt;options></td>
+                <td>
+                    Listet die fs items im aktuellen verzeichnis auf
+                </td>
+            </tr>
+            <tr>
+                <td>ssh &lt;host></td>
+                <td>versucht eine ssh verbindung mit dem &lt;host> aufzubauen</td>
+            </tr>
+            <tr>
+                <td>ping &lt;host></td>
+                <td>
+                    Pingt eine Server an und gibt die Zeit zurück
+                </td>
+            </tr>
+            <tr>
+                <td>trace &lt;host></td>
+                <td>
+                    Pingt einen Server an und gibt die Zeiten zurück. <br>Zusätzlich werden alle Router & zwischen Verbindungen gezeigt
+                </td>
+            </tr>
+            <tr>
+                <td>exit</td>
+                <td>
+                    Beendet das Terminal
+                </td>
+            </tr>
+            <tr>
+                <td>^C</td>
+                <td>
+                    Beendet den aktuellen Prozess und kehrt zum eingabe Prozess zurück (Beendet nicht die Konsole)
+                </td>
+            </tr>
+        </table>
+
+
+        <a href="index.html">Back ...</a> 
+    </body>
+</html>

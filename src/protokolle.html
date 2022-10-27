@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protokolle</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/index.js"></script>
+</head>
+<body class="--dark-mode">
+    <button class="switch-theme">
+        Toggle Darkmode
+    </button>
+    <a href="index.html">Back ...</a>
+    <h1>Anwendungsschicht</h1>
+    <table border>
+        <tr>
+            <th>Name</th>
+            <th>Auschreibung</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr>
+            <td>DNS</td>
+            <td>Domain Name System</td>
+            <td>
+                Wandelt ein Domain request in die dazugehürige IP Addresse um
+            </td>
+        </tr>
+        <tr>
+            <td>DHCP</td>
+            <td>Dynamic Host Configuaration Protocool</td>
+            <td>
+                Ist dafür zuständig geräten eine IP Adresse zuzuweisen
+            </td>
+        </tr>
+        <tr>
+            <td>SMTP</td>
+            <td>Simple Mail Transfer Protocol</td>
+            <td>
+                Ist ein Email Protocol was hauptsächlich zum Weiterleiten und Einspeisen der Emails benutzt wird. Zum Empfangen von Mails werden andere Protokolle wie POP3 oder IMAP benutzt 
+            </td>
+        </tr>
+        <tr>
+            <td>IMAP</td>
+            <td>Internet Message Access Protokoll</td>
+            <td>
+                Stellt ein Netzwerkdateisystem für Emails bereit. Ermöglicht eine zentrale Verwaltung. Muss nicht erneut vom Server zu Client geladen werden
+            </td>
+        </tr>
+        <tr>
+            <td>HTTP</td>
+            <td>Hyper Text Transfer Protocol</td>
+            <td>
+                Ist für die Übertragung von Daten -> HTML, CSS, JavaScript
+            </td>
+        </tr>
+        <tr>
+            <td>HTTPS</td>
+            <td>Hyper Text Transfer Protocol Secure</td>
+            <td>
+                Das gleiche wie HTTP bloß das es abhöre sicher ist
+            </td>
+        </tr>
+    </table>
+    
+    
+    
+    <h1>Transport Schicht</h1>
+    <table border>
+        <tr>
+            <th>Name</th>
+            <th>Auschreibung</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr>
+            <td>TCP</td>
+            <td>Transmission Control Protocol</td>
+            <td>
+                Definiert in welcher art und weiße Daten zwischen Netzwerkkomponeten ausgetauscht werden soll
+            </td>
+        </tr>
+        <tr>
+            <td>UDP</td>
+            <td>User Datagram Protocol</td>
+            <td>
+                Ermöglicht Anwendungen den Versand von Datengrammen im Ip Netzwerk
+            </td>
+        </tr>
+    </table>
+
+
+
+    <h1>Internet Schicht</h1>
+    <table border>
+        <tr>
+            <th>Name</th>
+            <th>Auschreibung</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr>
+            <td>IP</td>
+            <td>Internet Protocol</td>
+            <td>
+                Eine IP-Adresse ist eine Adresse in Computernetzen, die – wie das Internet – auf dem Internetprotokoll (IP) basieren. Sie wird Geräten zugewiesen, die an das Netz angebunden sind, macht die Geräte so adressierbar und damit erreichbar. Die IP-Adresse kann einen einzelnen Empfänger oder eine Gruppe von Empfängern bezeichnen (Multicast, Broadcast). Umgekehrt können einem Computer mehrere IP-Adressen zugeordnet sein.
+            </td>
+        </tr>
+        <tr>
+            <td>IPv4</td>
+            <td>Internet Protocol Version 4</td>
+            <td>
+                IPv4 (Internet Protocol Version 4), vor der Entwicklung von IPv6 auch einfach IP, ist die vierte Version des Internet Protocols (IP). Es war die erste Version des Internet Protocols, welche weltweit verbreitet und eingesetzt wurde, und bildet eine wichtige technische Grundlage des Internets. Es wurde in RFC 791 im Jahr 1981 definiert.
+            </td>
+        </tr>
+        <tr>
+            <td>IPv6</td>
+            <td>
+                Internet Protocol Version 6
+            </td>
+            <td>
+                IPv6 stellt als Protokoll der Vermittlungsschicht (Schicht 3 des OSI-Modells) im Rahmen der Internetprotokollfamilie eine über Teilnetze hinweg gültige 128-Bit-Adressierung der beteiligten Netzwerkelemente (Rechner oder Router) her.
+            </td>
+        </tr>
+    </table>
+
+    <h1>Hardware Modell</h1>
+    <table border>
+        <tr>
+            <th>Name</th>
+            <th>Auschreibung</th>
+            <th>Beschreibung</th>
+        </tr>
+        <tr>
+            <td>ARP</td>
+            <td>Address Resolution Protocol</td>
+            <td>
+                Das Address Resolution Protocol (ARP) ist ein Netzwerkprotokoll, das zu einer Netzwerkadresse der Internetschicht die physische Adresse (Hardware-Adresse) der Netzzugangsschicht ermittelt und diese Zuordnung gegebenenfalls in den ARP-Tabellen der beteiligten Rechner hinterlegt. Es wird fast ausschließlich im Zusammenhang mit IPv4-Adressierung auf Ethernet-Netzen, also zur Ermittlung von MAC-Adressen zu gegebenen IP-Adressen verwendet, obwohl es nicht darauf beschränkt ist. Für IPv6 wird diese Funktionalität nicht von ARP, sondern durch das Neighbor Discovery Protocol (NDP) bereitgestellt.
+            </td>
+        </tr>
+        <tr>
+            <td>Ethernet</td>
+            <td>-</td>
+            <td>
+                Ethernet ist eine Technik, die Software (Protokolle usw.) und Hardware (Kabel, Verteiler, Netzwerkkarten usw.) für kabelgebundene Datennetze spezifiziert, welche ursprünglich für lokale Datennetze (LANs) gedacht war und daher auch als LAN-Technik bezeichnet wird. Sie ermöglicht den Datenaustausch in Form von Datenframes zwischen den in einem lokalen Netz (LAN) angeschlossenen Geräten (Computer, Drucker und dergleichen).
+            </td>
+        </tr>
+    </table>
+    <a href="index.html">Back ...</a>
+</body>
+</html>

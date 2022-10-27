@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-left: 20rem;
+    margin-right: 20rem;
+}

@@ -1,0 +1,47 @@
+@import "structure.css";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.--dark-mode {
+    background: #292929;
+}
+
+*.--dark-mode {
+    color: rgb(189, 189, 189);
+    border-color: rgb(189, 189, 189);
+}
+
+a.--dark-mode:link {
+    color: rgb(0, 89, 255)!important;
+}
+
+a.--dark-mode:visited {
+    color: rgb(0, 89, 255)!important;
+    text-decoration: none;
+}
+
+table {
+    margin: 0.8rem 0;
+    width: 100%;
+}
+
+tr > th {
+    font-size: 22px;
+    padding: 0.4rem
+}
+
+tr > td { 
+    padding: 0.4rem 1.2rem
+}
+
+
+table, tr, td {
+    border: 1px solid #0b0b0b;
+    border-collapse: collapse;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
