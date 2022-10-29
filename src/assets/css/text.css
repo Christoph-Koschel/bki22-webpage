@@ -1,0 +1,8 @@
+*.text-hover:hover {
+    color: var(--color-dark-hover);
+    transition: 0.2s;
+}
+
+*.c-default {
+    cursor: default;
+}

@@ -100,5 +100,5 @@ export function change_location(key: string | null, rerender: boolean) {
         parseDocumentModel(Rout.getDM(key));
     }
 
-    window.history.pushState(null, "", window.location.origin + window.location.pathname + (key == null ? "" : "?r=" + key));
+    window.history.pushState(null, "", window.location.origin + window.location.pathname + (key == DEFAULT_ROOT ? "" : "?r=" + key));
 }

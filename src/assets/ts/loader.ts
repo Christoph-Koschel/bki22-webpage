@@ -1,12 +1,15 @@
 import {DEFAULT_ROOT, QUERY} from "./utils";
-import {GLOBAL_SEARCH} from "./page";
+import {GLOBAL_SEARCH, SETTINGS} from "./page";
 import {createEmptyDocumentModel, Rout} from "./rout";
 import {index_page} from "./pages/index";
 import {global_search_page} from "./pages/global_search";
+import {settings_page} from "./pages/settings";
+import {isDarkMode} from "./theme";
 
 
 Rout.register(DEFAULT_ROOT, index_page);
 Rout.register(GLOBAL_SEARCH, global_search_page);
+Rout.register(SETTINGS, settings_page);
 
 window.addEventListener("load", () => {
     let root;
@@ -27,10 +30,13 @@ window.addEventListener("load", () => {
     let app = document.createElement("div");
     app.id = "app";
 
-    console.log(root);
     document.body.appendChild(app);
     app.appendChild(root);
     Rout.saveState(key, root);
+
+    if (!isDarkMode()) {
+        document.body.classList.remove("--dark-mode");
+    }
 });
 
 

@@ -3,14 +3,17 @@
     "files": [
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\ui.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\types.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\specialElements.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\rout.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\index.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\loader.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\utils.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\page.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\index.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global_search.ts"
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global_search.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\xmlParser.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\settings.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\theme.ts"
     ],
     "lib": [
         {

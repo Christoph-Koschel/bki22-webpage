@@ -1,0 +1,12 @@
+:root {
+    --background: #FFF;
+    --color-dark: rgb(33, 33, 33);
+    --color-dark-hover: rgb(71, 71, 71);
+    --color-primary: #A4508B;
+}
+
+body.--dark-mode {
+    --background: #292929;
+    --color-dark: rgb(212, 212, 212);
+    --color-dark-hover: rgb(164, 164, 164);
+}

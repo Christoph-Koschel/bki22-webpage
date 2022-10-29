@@ -5,3 +5,4 @@ function next() {
 }
 
 export const GLOBAL_SEARCH = next();
+export const SETTINGS = next();

@@ -1,0 +1,43 @@
+*[page=global].brand {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 2.5rem;
+}
+*[page=global].brand div.before {
+  content: " ";
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  height: 120px;
+  width: 5px;
+  background: var(--color-dark);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+*[page=global].navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 15px;
+  border-bottom: 1px solid;
+}
+*[page=global].navbar h1 {
+  margin: 0;
+  padding: 0;
+}
+*[page=global].navbar div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+*[page=global].navbar div div h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=global.css.map */
