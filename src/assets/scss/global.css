@@ -23,21 +23,32 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 15px 15px;
   border-bottom: 1px solid;
+}
+*[page=global].navbar > * {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+*[page=global].navbar > *:first-child {
+  padding-left: 15px;
+}
+*[page=global].navbar > *:last-child {
+  padding-right: 15px;
 }
 *[page=global].navbar h1 {
   margin: 0;
   padding: 0;
+  font-size: 1.8rem;
 }
 *[page=global].navbar div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-*[page=global].navbar div div h3 {
+*[page=global].navbar div div a {
   margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=global.css.map */

@@ -3,6 +3,9 @@ div[page=default] {
   align-items: center;
   flex-direction: column;
 }
+div[page=default] h1, div[page=default] h2 {
+  text-align: center;
+}
 div[page=default] ul.table-contents {
   list-style: none;
   margin: 0;

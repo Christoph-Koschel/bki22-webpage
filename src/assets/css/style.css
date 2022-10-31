@@ -5,9 +5,10 @@
 
 @import "global.css";
 @import "index.css";
+@import "search.css";
 
 ::-webkit-scrollbar {
-    display: none;
+    /*display: none;*/
 }
 
 * {
@@ -20,7 +21,43 @@ body {
 
 * {
     color: var(--color-dark);
-    border-color: rgb(189, 189, 189);
+}
+
+input {
+    appearance: none;
+    backface-visibility: hidden;
+    background: var(--background-dark);
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--color-dark);
+    cursor: text;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 12px 30px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.--dark-mode input {
+    background: var(--background-dark);
+    color: var(--color-light);
 }
 
 button {

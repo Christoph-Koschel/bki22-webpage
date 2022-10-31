@@ -33,7 +33,7 @@ export function buildNavBar(current: string): HTMLElement {
 function buildItem(name: string, id: string, current: boolean): HTMLElement {
     let struct = `
         <div>
-            <h3 class="text-hover c-default"><text>${name}</text></h3>
+            <a class="text-hover c-default"><text>${name}</text></a>
         </div>
     `;
 

@@ -4,12 +4,49 @@ export function arr_contains<T>(query: T[], search: T[]): boolean {
     for (const q of query) {
         for (const s of search) {
             if (q == s) {
-
+                return true;
             }
         }
     }
 
     return false;
+}
+
+export function arr_contains_count<T>(query: T[], search: T[]): number {
+    let count = 0;
+
+    for (const q of query) {
+        for (const s of search) {
+            if (q == s) {
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
+
+export function string_contains(query: string, search: string[]): boolean {
+    for (const s of search) {
+        if (query.indexOf(s) != -1) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+export function string_contains_count(query: string, search: string[]): number {
+    let count = 0;
+    console.log(search, query);
+    for (const s of search) {
+        if (query.indexOf(s) != -1) {
+            debugger;
+            count++;
+        }
+    }
+
+    return count;
 }
 
 export function html_escape(x: string): string {

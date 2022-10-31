@@ -1,0 +1,15 @@
+div[page=p0] {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+div[page=p0] table.result-table {
+  width: 100%;
+}
+div[page=p0] table.result-table > tr > th {
+  padding: 5px;
+}
+div[page=p0] table.result-table > tr > td {
+  padding: 5px;
+}
+
+/*# sourceMappingURL=search.css.map */

@@ -3,6 +3,20 @@ import {select} from "./lib/code-database/linq";
 import {DB_DATA} from "./utils";
 import {arr_contains, html_escape} from "./utils";
 
+export function allGroup(): DataGroup[] {
+    return [
+        "cisco",
+        "linux",
+        "java",
+        "router",
+        "switch"
+    ];
+}
+
+export function isGroup(x: string): boolean {
+    return allGroup().includes(<DataGroup>x);
+}
+
 export function parseData(element: HTMLElement, groups: DataGroup[]) {
     element.innerHTML = "";
 

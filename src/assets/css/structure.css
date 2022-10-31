@@ -7,3 +7,13 @@ body {
     margin-left: 20rem;
     margin-right: 20rem;
 }
+
+table {
+    border-style: none;
+}
+
+table.border, table.border > tr, table.border > tr > th, table.border > tr > td {
+    border: 1px solid var(--color-dark);
+    border-collapse: collapse;
+}
+
