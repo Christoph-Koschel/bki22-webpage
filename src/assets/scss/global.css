@@ -25,19 +25,8 @@
   gap: 20px;
   border-bottom: 1px solid;
 }
-*[page=global].navbar > * {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-*[page=global].navbar > *:first-child {
-  padding-left: 15px;
-}
-*[page=global].navbar > *:last-child {
-  padding-right: 15px;
-}
 *[page=global].navbar h1 {
   margin: 0;
-  padding: 0;
   font-size: 1.8rem;
 }
 *[page=global].navbar div {
@@ -49,6 +38,16 @@
   margin: 0;
   padding: 0;
   font-size: 1rem;
+}
+*[page=global].navbar > * {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+*[page=global].navbar > *:first-child {
+  padding-left: 15px;
+}
+*[page=global].navbar > *:last-child {
+  padding-right: 15px;
 }
 
 /*# sourceMappingURL=global.css.map */

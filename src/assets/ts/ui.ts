@@ -9,7 +9,8 @@ export function allGroup(): DataGroup[] {
         "linux",
         "java",
         "router",
-        "switch"
+        "switch",
+        "cli"
     ];
 }
 

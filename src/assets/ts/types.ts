@@ -7,7 +7,7 @@ export interface EscapeTable {
     replace: string
 }
 
-export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco";
+export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco" | "cli" |  "others";
 
 export interface DBDataArgument {
     key: string,
