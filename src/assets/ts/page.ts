@@ -6,3 +6,4 @@ function next() {
 
 export const GLOBAL_SEARCH = next();
 export const SETTINGS = next();
+export const HOME = next();

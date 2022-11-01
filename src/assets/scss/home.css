@@ -1,0 +1,22 @@
+div[page=p2] {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+div[page=p2] h1, div[page=p2] h2 {
+  text-align: center;
+}
+div[page=p2] ul.table-contents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+div[page=p2] ul.table-contents li {
+  font-size: 1.2rem;
+}
+div[page=p2] ul.table-contents li:before {
+  content: "#";
+  margin-right: 0.6rem;
+}
+
+/*# sourceMappingURL=home.css.map */

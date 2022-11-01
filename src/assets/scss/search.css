@@ -8,8 +8,14 @@ div[page=p0] table.result-table {
 div[page=p0] table.result-table > tr > th {
   padding: 5px;
 }
+div[page=p0] table.result-table > tr > th:first-child {
+  min-width: 350px;
+}
 div[page=p0] table.result-table > tr > td {
   padding: 5px;
+}
+div[page=p0] table.result-table > tr > td:first-child {
+  min-width: 350px;
 }
 
 /*# sourceMappingURL=search.css.map */

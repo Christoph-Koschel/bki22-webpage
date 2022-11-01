@@ -1,13 +1,15 @@
 import {DEFAULT_ROOT, QUERY} from "./utils";
-import {GLOBAL_SEARCH, SETTINGS} from "./page";
+import {GLOBAL_SEARCH, HOME, SETTINGS} from "./page";
 import {createEmptyDocumentModel, Rout} from "./rout";
 import {index_page} from "./pages/index";
 import {global_search_page} from "./pages/global_search";
 import {settings_page} from "./pages/settings";
 import {isDarkMode} from "./theme";
+import {home_page} from "./pages/home";
 
 
 Rout.register(DEFAULT_ROOT, index_page);
+Rout.register(HOME, home_page);
 Rout.register(GLOBAL_SEARCH, global_search_page);
 Rout.register(SETTINGS, settings_page);
 

@@ -72,6 +72,21 @@ export function refreshQuery() {
     _QUERY = parseQuery(window.location.search);
 }
 
+export function allGroup(): DataGroup[] {
+    return [
+        "cisco",
+        "linux",
+        "java",
+        "router",
+        "switch",
+        "cli"
+    ];
+}
+
+export function isGroup(x: string): boolean {
+    return allGroup().includes(<DataGroup>x);
+}
+
 const SWITCH: DataGroup = "switch";
 const ROUTER: DataGroup = "router";
 const LINUX: DataGroup = "linux";

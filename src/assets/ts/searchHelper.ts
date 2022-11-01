@@ -1,7 +1,6 @@
 import {DataGroup, DBData, SearchResultParameter} from "./types";
-import {arr_contains_count, DB_DATA, html_escape, string_contains_count} from "./utils";
+import {arr_contains_count, DB_DATA, html_escape, isGroup, string_contains_count} from "./utils";
 import {select} from "./lib/code-database/linq";
-import {isGroup} from "./ui";
 
 function dataHeader(ele: HTMLElement) {
     let tr = document.createElement("tr");
