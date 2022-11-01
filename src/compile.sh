@@ -26,6 +26,12 @@ mkdir $distPath/assets/css
 echo mkdir $distPath/assets/webfonts
 mkdir $distPath/assets/webfonts
 
+echo mkdir $distPath/assets/php
+mkdir $distPath/assets/php
+
+echo mkdir $distPath/assets/json
+mkdir $distPath/assets/json
+
 echo Copy files
 
 echo "*.html"
@@ -40,6 +46,12 @@ cp $srcPath/assets/scss/*.css $distPath/assets/css
 
 echo *.js
 cp $srcPath/assets/ts/build/*.c.js $distPath/assets/js
+
+echo *.php
+cp $srcPath/assets/php/*.php $distPath/assets/php
+
+echo *.json
+cp $srcPath/assets/json/*.json $distPath/assets/json
 
 echo webfonts
 cp $srcPath/assets/webfonts/*.* $distPath/assets/webfonts

@@ -4,7 +4,7 @@ import {parseTemplate} from "../xmlParser";
 import {GLOBAL_SEARCH, HOME, SETTINGS} from "../page";
 
 export function home_page(e: RoutEvent) {
-    e.dm.title = "Work-Page";
+    e.dm.title = "Work-Page | Home";
 
     let root = document.createElement("div");
     root.setAttribute("page", HOME);
