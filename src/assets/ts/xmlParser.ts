@@ -11,8 +11,8 @@ function parseElement(child: Element): HTMLElement | Text {
     }
 
     let x = document.createElement(child.tagName);
-    for (let attribute of child.attributes) {
-        x.setAttribute(attribute.name, attribute.value);
+    for (let i = 0; i < child.attributes.length; i++) {
+        x.setAttribute(child.attributes.item(i).name, child.attributes.item(i).value);
     }
 
     if (child.children.length != 0) {
@@ -31,7 +31,8 @@ function parseElement(child: Element): HTMLElement | Text {
 }
 
 function* parseElements(children: HTMLCollection): Generator<HTMLElement | Text> {
-    for (let child of children) {
+    for (let i = 0; i < children.length; i++) {
+        let child = children.item(i);
         let x = parseElement(child);
         yield x;
     }

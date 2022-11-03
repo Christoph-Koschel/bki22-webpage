@@ -1,16 +1,20 @@
-import {RoutEvent} from "../rout";
-import {GLOBAL_SEARCH} from "../page";
+import {change_location, RoutEvent} from "../rout";
 import {buildNavBar} from "./global";
 import {parseTemplate} from "../xmlParser";
-import {DB_DATA} from "../utils";
+import {DB_DATA, R} from "../utils";
 import {filterData} from "../searchHelper";
+import {Storage} from "../Storage";
 
 export function global_search_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Search";
-    let root = document.createElement("div");
-    root.setAttribute("page", GLOBAL_SEARCH);
+    if (!Storage.require(R.ID.SEARCH_TABLE)) {
+        change_location(R.PAGES.DEFAULT_ROOT, true);
+    }
 
-    root.appendChild(buildNavBar(GLOBAL_SEARCH));
+    let root = document.createElement("div");
+    root.setAttribute("page", R.PAGES.GLOBAL_SEARCH);
+
+    root.appendChild(buildNavBar(R.PAGES.GLOBAL_SEARCH));
     root.appendChild(buildSearchPanel());
     root.appendChild(buildResultPanel());
 

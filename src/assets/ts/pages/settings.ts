@@ -1,17 +1,21 @@
-import {RoutEvent} from "../rout";
-import {SETTINGS} from "../page";
+import {change_location, RoutEvent} from "../rout";
 import {buildNavBar} from "./global";
 import {parseTemplate} from "../xmlParser";
 import {disableDarkMode, enableDarkMode, isDarkMode} from "../theme";
+import {R} from "../utils";
+import {Storage} from "../Storage";
 
 export function settings_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Settings";
+    if (!Storage.require(R.ID.SEARCH_TABLE)) {
+        change_location(R.PAGES.DEFAULT_ROOT, true);
+    }
 
     let root = document.createElement("div");
-    root.setAttribute("page", SETTINGS);
+    root.setAttribute("page", R.PAGES.SETTINGS);
     root.classList.add("container");
 
-    root.appendChild(buildNavBar(SETTINGS));
+    root.appendChild(buildNavBar(R.PAGES.SETTINGS));
     root.appendChild(buildThemeManager());
 
     return root;

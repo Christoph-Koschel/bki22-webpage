@@ -1,6 +1,6 @@
 import {parseTemplate} from "../xmlParser";
-import {GLOBAL_SEARCH, HOME, SETTINGS} from "../page";
 import {change_location} from "../rout";
+import {R} from "../utils";
 
 export function buildNavBar(current: string): HTMLElement {
     let struct = `
@@ -19,9 +19,9 @@ export function buildNavBar(current: string): HTMLElement {
 
     let root = parseTemplate(struct);
     let navbar = root.querySelector("div.navbar");
-    navbar.appendChild(buildItem("Home", HOME, HOME == current));
-    navbar.appendChild(buildItem("Globale Suche", GLOBAL_SEARCH, GLOBAL_SEARCH == current));
-    navbar.appendChild(buildItem("Einstellungen", SETTINGS, SETTINGS == current));
+    navbar.appendChild(buildItem("Home", R.PAGES.HOME, R.PAGES.HOME == current));
+    navbar.appendChild(buildItem("Globale Suche", R.PAGES.GLOBAL_SEARCH, R.PAGES.GLOBAL_SEARCH == current));
+    navbar.appendChild(buildItem("Einstellungen", R.PAGES.SETTINGS, R.PAGES.SETTINGS == current));
 
     let fake = <HTMLElement>root.querySelector("div.fake-navbar");
     fake.style.height = "90px";

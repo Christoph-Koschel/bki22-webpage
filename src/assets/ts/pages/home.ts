@@ -1,13 +1,17 @@
 import {change_location, RoutEvent} from "../rout";
 import {buildBrand} from "./global";
 import {parseTemplate} from "../xmlParser";
-import {GLOBAL_SEARCH, HOME, SETTINGS} from "../page";
+import {R} from "../utils";
+import {Storage} from "../Storage";
 
 export function home_page(e: RoutEvent) {
     e.dm.title = "Work-Page | Home";
+    if (!Storage.require(R.ID.SEARCH_TABLE)) {
+        change_location(R.PAGES.DEFAULT_ROOT, true);
+    }
 
     let root = document.createElement("div");
-    root.setAttribute("page", HOME);
+    root.setAttribute("page", R.PAGES.HOME);
     root.classList.add("container");
 
     root.appendChild(buildHeader());
@@ -49,7 +53,7 @@ function buildTableContents(): HTMLElement {
         li.classList.add("text-hover", "c-default")
         li.innerHTML = "Globale Suche";
         li.addEventListener("click", () => {
-            change_location(GLOBAL_SEARCH, false);
+            change_location(R.PAGES.GLOBAL_SEARCH, false);
         });
         ul.appendChild(li);
     }
@@ -58,7 +62,7 @@ function buildTableContents(): HTMLElement {
         li.classList.add("text-hover", "c-default")
         li.innerHTML = "Einstellungen";
         li.addEventListener("click", () => {
-            change_location(SETTINGS, false);
+            change_location(R.PAGES.SETTINGS, false);
         });
         ul.appendChild(li);
     }

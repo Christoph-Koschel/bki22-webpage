@@ -1,14 +1,5 @@
-import {DataGroup, DBData, EscapeTable} from "./types";
-
-
-const SWITCH: DataGroup = "switch";
-const ROUTER: DataGroup = "router";
-const LINUX: DataGroup = "linux";
-const JAVA: DataGroup = "java";
-const CISCO: DataGroup = "cisco";
-const CLI: DataGroup = "cli";
-const OTHERS: DataGroup = "others";
-export const DEFAULT_ROOT = "default";
+import {_R, DataGroup, DBData, EscapeTable} from "./types";
+import {Storage} from "./Storage";
 
 export const ESCAPE_TABLE: EscapeTable[] = [
     {
@@ -19,7 +10,35 @@ export const ESCAPE_TABLE: EscapeTable[] = [
         key: /\n/g,
         replace: "<br>"
     }
-]
+];
+
+let pageID = 0;
+
+function next() {
+    return "p" + (pageID++);
+}
+
+export const R: _R = {
+    GROUPS: {
+        SWITCH: "switch",
+        ROUTER: "router",
+        LINUX: "linux",
+        JAVA: "java",
+        CISCO: "cisco",
+        CLI: "cli",
+        OTHERS: "others"
+    },
+    PAGES: {
+        DEFAULT_ROOT: "default",
+        GLOBAL_SEARCH: next(),
+        SETTINGS: next(),
+        HOME: next()
+    },
+    ID: {
+        QUERY: "storage.query",
+        SEARCH_TABLE: "storage.search-table"
+    }
+}
 
 
 export function arr_contains<T>(query: T[], search: T[]): boolean {
@@ -80,25 +99,18 @@ export function html_escape(x: string): string {
 }
 
 export function allGroup(): DataGroup[] {
-    return [
-        "cisco",
-        "linux",
-        "java",
-        "router",
-        "switch",
-        "cli"
-    ];
+    let result = [];
+    Object.keys(R.GROUPS).forEach(value => {
+        result.push(R.GROUPS[value]);
+    });
+    return result;
 }
 
 export function isGroup(x: string): boolean {
     return allGroup().includes(<DataGroup>x);
 }
 
-let _QUERY = parseQuery(window.location.search);
-
-export const QUERY = () => _QUERY;
-
-export function parseQuery(x: string): Map<string, string> {
+export function parseQuery(x: string) {
     let params: URLSearchParams = new URLSearchParams(x);
     let p = new Map();
 
@@ -106,17 +118,10 @@ export function parseQuery(x: string): Map<string, string> {
         p.set(key, value);
     });
 
-    return p;
+    Storage.alloc(R.ID.QUERY, p);
 }
 
-export function refreshQuery() {
-    _QUERY = parseQuery(window.location.search);
-}
+export const DB_DATA = () => Storage.load<DBData[]>(R.ID.SEARCH_TABLE);
+export const QUERY = () => Storage.load<Map<string, string>>(R.ID.QUERY);
 
-
-let _DB_DATA: DBData[] = []
-export const DB_DATA = () => _DB_DATA;
-
-export function refreshDB(data: DBData[]) {
-    _DB_DATA = data;
-}
+parseQuery(window.location.search);

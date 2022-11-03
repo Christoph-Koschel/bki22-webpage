@@ -1,5 +1,4 @@
-import {DEFAULT_ROOT, QUERY} from "./utils";
-import {GLOBAL_SEARCH, HOME, SETTINGS} from "./page";
+import {QUERY, R} from "./utils";
 import {createEmptyDocumentModel, Rout} from "./rout";
 import {index_page} from "./pages/index";
 import {global_search_page} from "./pages/global_search";
@@ -7,11 +6,10 @@ import {settings_page} from "./pages/settings";
 import {isDarkMode} from "./theme";
 import {home_page} from "./pages/home";
 
-
-Rout.register(DEFAULT_ROOT, index_page);
-Rout.register(HOME, home_page);
-Rout.register(GLOBAL_SEARCH, global_search_page);
-Rout.register(SETTINGS, settings_page);
+Rout.register(R.PAGES.DEFAULT_ROOT, index_page);
+Rout.register(R.PAGES.HOME, home_page);
+Rout.register(R.PAGES.GLOBAL_SEARCH, global_search_page);
+Rout.register(R.PAGES.SETTINGS, settings_page);
 
 window.addEventListener("load", () => {
     let root;
@@ -23,10 +21,10 @@ window.addEventListener("load", () => {
             dm: createEmptyDocumentModel()
         });
     } else {
-        root = Rout.emit(DEFAULT_ROOT, {
+        root = Rout.emit(R.PAGES.DEFAULT_ROOT, {
             dm: createEmptyDocumentModel()
         });
-        key = DEFAULT_ROOT;
+        key = R.PAGES.DEFAULT_ROOT;
     }
 
     let app = document.createElement("div");

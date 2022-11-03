@@ -31,7 +31,8 @@
   },
   {
     "groups": [
-      "switch"
+      "switch",
+      "router"
     ],
     "description": "Message of Today Nachricht setzen",
     "prefix": "(conf)#",
@@ -93,22 +94,7 @@
       "switch",
       "router"
     ],
-    "description": "Consolenpasswort setzen",
-    "prefix": "* (conf-line)#",
-    "cmd": "password",
-    "arguments": [
-      {
-        "key": "psw",
-        "description": "Das Passwort"
-      }
-    ]
-  },
-  {
-    "groups": [
-      "switch",
-      "router"
-    ],
-    "description": "Consolenpasswort \"scharf\" stellen",
+    "description": "Consolen passwort \"scharf\" stellen",
     "prefix": "* (conf-line)#",
     "cmd": "login",
     "arguments": []
@@ -166,16 +152,6 @@
         "description": "Das Passwort"
       }
     ]
-  },
-  {
-    "groups": [
-      "switch",
-      "router"
-    ],
-    "description": "VTY-Passwort \"scharf\" stellen",
-    "prefix": "* (conf-line)#",
-    "cmd": "login",
-    "arguments": []
   },
   {
     "groups": [

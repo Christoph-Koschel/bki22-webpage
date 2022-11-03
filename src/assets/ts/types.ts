@@ -26,3 +26,25 @@ export interface SearchResultParameter<T> {
     quote: number,
     item: T
 }
+
+export type _R = {
+    GROUPS: {
+        SWITCH: DataGroup,
+        ROUTER: DataGroup,
+        LINUX: DataGroup,
+        JAVA: DataGroup,
+        CISCO: DataGroup,
+        CLI: DataGroup,
+        OTHERS: DataGroup
+    }
+    PAGES: {
+        DEFAULT_ROOT: string,
+        GLOBAL_SEARCH: string,
+        SETTINGS: string,
+        HOME: string
+    },
+    ID: {
+        QUERY: string,
+        SEARCH_TABLE: string
+    }
+}

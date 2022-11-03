@@ -1,5 +1,5 @@
 import {Callback} from "./types";
-import {DEFAULT_ROOT, QUERY, refreshQuery} from "./utils";
+import {parseQuery, QUERY, R} from "./utils";
 
 export interface RoutEvent {
     dm: DocumentModel
@@ -53,7 +53,7 @@ export class Rout {
 }
 
 window.onpopstate = () => {
-    refreshQuery();
+    parseQuery(window.location.href);
     let root;
     let key;
     let app = document.getElementById("app");
@@ -64,8 +64,8 @@ window.onpopstate = () => {
             dm: createEmptyDocumentModel()
         });
     } else {
-        key = DEFAULT_ROOT;
-        root = Rout.emit(DEFAULT_ROOT, {
+        key = R.PAGES.DEFAULT_ROOT;
+        root = Rout.emit(R.PAGES.DEFAULT_ROOT, {
             dm: createEmptyDocumentModel()
         });
     }
@@ -78,7 +78,7 @@ export function change_location(key: string | null, rerender: boolean) {
     let app = document.getElementById("app");
 
     if (key == null) {
-        key = DEFAULT_ROOT;
+        key = R.PAGES.DEFAULT_ROOT;
     }
 
     if (rerender) {
@@ -100,5 +100,5 @@ export function change_location(key: string | null, rerender: boolean) {
         parseDocumentModel(Rout.getDM(key));
     }
 
-    window.history.pushState(null, "", window.location.origin + window.location.pathname + (key == DEFAULT_ROOT ? "" : "?r=" + key));
+    window.history.pushState(null, "", window.location.origin + window.location.pathname + (key == R.PAGES.DEFAULT_ROOT ? "" : "?r=" + key));
 }

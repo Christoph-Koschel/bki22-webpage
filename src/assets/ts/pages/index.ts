@@ -1,19 +1,21 @@
 import {change_location, RoutEvent} from "../rout";
 import {parseTemplate} from "../xmlParser";
-import {DB_DATA, DEFAULT_ROOT, html_escape, refreshDB} from "../utils";
-import {HOME} from "../page";
+import {DB_DATA, html_escape, R} from "../utils";
+import {buildBrand} from "./global";
+import {Storage} from "../Storage";
 
 export function index_page(e: RoutEvent): HTMLElement {
-    e.dm.title = "Work-Page"
+    e.dm.title = "Work-Page";
 
     let root = document.createElement("div");
-    root.setAttribute("page", DEFAULT_ROOT);
+    root.setAttribute("page", R.PAGES.DEFAULT_ROOT);
     root.appendChild(buildLogo());
     root.appendChild(buildAnimation());
     root.appendChild(buildTitle());
+    root.appendChild(buildBrand());
 
     fetch_data().then(() => {
-        change_location(HOME, false);
+        change_location(R.PAGES.HOME, false);
     });
 
     return root;
@@ -22,11 +24,11 @@ export function index_page(e: RoutEvent): HTMLElement {
 async function fetch_data() {
     writeTitle("Überprüfe Daten");
 
-    if (DB_DATA().length == 0) {
+    if (!Storage.contains(R.ID.SEARCH_TABLE)) {
         writeTitle("Lade Datenbank herunter...")
         let str: string = await doRequest("assets/php/fetch.php");
         try {
-            refreshDB(JSON.parse(str));
+            Storage.alloc(R.ID.SEARCH_TABLE, JSON.parse(str));
         } catch (err) {
 
         }
