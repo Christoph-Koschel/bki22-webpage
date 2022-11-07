@@ -53,7 +53,7 @@ export class Rout {
 }
 
 window.onpopstate = () => {
-    parseQuery(window.location.href);
+    parseQuery(window.location.search);
     let root;
     let key;
     let app = document.getElementById("app");
@@ -74,7 +74,7 @@ window.onpopstate = () => {
     app.appendChild(root);
 }
 
-export function change_location(key: string | null, rerender: boolean) {
+export function change_location(key: string | null, rerender: boolean, ...args: string[]) {
     let app = document.getElementById("app");
 
     if (key == null) {
@@ -99,6 +99,11 @@ export function change_location(key: string | null, rerender: boolean) {
         app.appendChild(newRoot);
         parseDocumentModel(Rout.getDM(key));
     }
+    let url = window.location.origin + window.location.pathname + (key == R.PAGES.DEFAULT_ROOT ? "" : "?r=" + key);
+    if (args.length != 0) {
+        url += key == R.PAGES.DEFAULT_ROOT ? "?" : "&";
+        url += args.join("&");
+    }
 
-    window.history.pushState(null, "", window.location.origin + window.location.pathname + (key == R.PAGES.DEFAULT_ROOT ? "" : "?r=" + key));
+    window.history.pushState(null, "", url);
 }

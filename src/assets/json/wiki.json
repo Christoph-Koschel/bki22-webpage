@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Netzwerk Protokolle",
+    "file": "templates/four_section_model.html"
+  },
+  {
+    "title": "Simples Netzwerk",
+    "file": "templates/simple_network.html"
+  },
+  {
+    "title": "Innenleben vom PC",
+    "file": "templates/pc_components.html"
+  }
+]

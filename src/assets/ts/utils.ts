@@ -1,4 +1,4 @@
-import {_R, DataGroup, DBData, EscapeTable} from "./types";
+import {_R, DataGroup, DBData, EscapeTable, WikiResolvePage} from "./types";
 import {Storage} from "./Storage";
 
 export const ESCAPE_TABLE: EscapeTable[] = [
@@ -32,11 +32,13 @@ export const R: _R = {
         DEFAULT_ROOT: "default",
         GLOBAL_SEARCH: next(),
         SETTINGS: next(),
-        HOME: next()
+        HOME: next(),
+        WIKI: next()
     },
     ID: {
         QUERY: "storage.query",
-        SEARCH_TABLE: "storage.search-table"
+        SEARCH_TABLE: "storage.search-table",
+        WIKI_DATA: "storage.wiki-data"
     }
 }
 
@@ -110,6 +112,19 @@ export function isGroup(x: string): boolean {
     return allGroup().includes(<DataGroup>x);
 }
 
+export function allPages(): string[] {
+    let result = [];
+    Object.keys(R.PAGES).forEach((value) => {
+        result.push(R.PAGES[value]);
+    });
+
+    return result;
+}
+
+export function isPage(x: string): boolean {
+    return allPages().includes(x);
+}
+
 export function parseQuery(x: string) {
     let params: URLSearchParams = new URLSearchParams(x);
     let p = new Map();
@@ -123,5 +138,6 @@ export function parseQuery(x: string) {
 
 export const DB_DATA = () => Storage.load<DBData[]>(R.ID.SEARCH_TABLE);
 export const QUERY = () => Storage.load<Map<string, string>>(R.ID.QUERY);
+export const WIKI_DATA = () => Storage.load<WikiResolvePage[]>(R.ID.WIKI_DATA);
 
 parseQuery(window.location.search);

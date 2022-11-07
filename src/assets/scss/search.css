@@ -5,14 +5,8 @@ div[page=p0] {
 div[page=p0] table.result-table {
   width: 100%;
 }
-div[page=p0] table.result-table > tr > th {
-  padding: 5px;
-}
 div[page=p0] table.result-table > tr > th:first-child {
   min-width: 350px;
-}
-div[page=p0] table.result-table > tr > td {
-  padding: 5px;
 }
 div[page=p0] table.result-table > tr > td:first-child {
   min-width: 350px;

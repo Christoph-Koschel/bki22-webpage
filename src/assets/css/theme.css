@@ -2,8 +2,10 @@
     --background: #FFF;
     --background-dark: #ede8e8;
     --color-dark: rgb(33, 33, 33);
+    --color-dark-muted: rgb(121, 121, 121);
     --color-dark-hover: rgb(71, 71, 71);
-    --color-primary: #A4508B;
+    --color-primary: #2f80ed;
+    --color-primary-hover: #1366d6;
     --color-light: rgb(212, 212, 212);
 }
 
@@ -11,6 +13,7 @@ body.--dark-mode {
     --background: #292929;
     --background-dark: #ffffff;
     --color-dark: rgb(212, 212, 212);
+    --color-dark-muted: #bdbdbd;
     --color-dark-hover: rgb(164, 164, 164);
     --color-light: rgb(33, 33, 33);
 }

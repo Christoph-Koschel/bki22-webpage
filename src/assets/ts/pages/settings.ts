@@ -1,14 +1,13 @@
-import {change_location, RoutEvent} from "../rout";
-import {buildNavBar} from "./global";
+import {RoutEvent} from "../rout";
+import {buildNavBar, checkRequirements} from "./global";
 import {parseTemplate} from "../xmlParser";
 import {disableDarkMode, enableDarkMode, isDarkMode} from "../theme";
 import {R} from "../utils";
-import {Storage} from "../Storage";
 
 export function settings_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Settings";
-    if (!Storage.require(R.ID.SEARCH_TABLE)) {
-        change_location(R.PAGES.DEFAULT_ROOT, true);
+    if (!checkRequirements(R.PAGES.SETTINGS)) {
+        return;
     }
 
     let root = document.createElement("div");

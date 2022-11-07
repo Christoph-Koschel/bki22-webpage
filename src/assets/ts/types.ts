@@ -7,7 +7,7 @@ export interface EscapeTable {
     replace: string
 }
 
-export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco" | "cli" |  "others";
+export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco" | "cli" | "others";
 
 export interface DBDataArgument {
     key: string,
@@ -27,6 +27,17 @@ export interface SearchResultParameter<T> {
     item: T
 }
 
+export interface WikiPage {
+    title: string,
+    file: string
+}
+
+export interface WikiResolvePage {
+    title: string,
+    struct: string,
+    file: string
+}
+
 export type _R = {
     GROUPS: {
         SWITCH: DataGroup,
@@ -41,10 +52,12 @@ export type _R = {
         DEFAULT_ROOT: string,
         GLOBAL_SEARCH: string,
         SETTINGS: string,
-        HOME: string
+        HOME: string,
+        WIKI: string
     },
     ID: {
         QUERY: string,
-        SEARCH_TABLE: string
+        SEARCH_TABLE: string,
+        WIKI_DATA: string
     }
 }

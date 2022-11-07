@@ -1,5 +1,5 @@
 import {change_location, RoutEvent} from "../rout";
-import {buildNavBar} from "./global";
+import {buildNavBar, checkRequirements} from "./global";
 import {parseTemplate} from "../xmlParser";
 import {DB_DATA, R} from "../utils";
 import {filterData} from "../searchHelper";
@@ -7,10 +7,9 @@ import {Storage} from "../Storage";
 
 export function global_search_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Search";
-    if (!Storage.require(R.ID.SEARCH_TABLE)) {
-        change_location(R.PAGES.DEFAULT_ROOT, true);
+    if (!checkRequirements(R.PAGES.GLOBAL_SEARCH)) {
+        return;
     }
-
     let root = document.createElement("div");
     root.setAttribute("page", R.PAGES.GLOBAL_SEARCH);
 

@@ -17,3 +17,64 @@ table.border, table.border > tr, table.border > tr > th, table.border > tr > td 
     border-collapse: collapse;
 }
 
+table.padding > tr > th, table.padding > tr > td {
+    padding: 5px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+ul.mini {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.slash > li:before {
+    content: "-";
+    margin-right: 20px;
+    color: var(--color-dark-muted);
+}
+
+ul.slash > li {
+    padding: 5px 0;
+}
+
+.pt-50 {
+    padding-top: 50px;
+}
+
+.pl-50 {
+    padding-left: 50px;
+}
+
+.pr-50 {
+    padding-right: 50px;
+}
+
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.mr-50 {
+    margin-right: 50px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}

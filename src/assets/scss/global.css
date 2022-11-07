@@ -24,6 +24,7 @@
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid;
+  z-index: 10;
 }
 *[page=global].navbar h1 {
   margin: 0;

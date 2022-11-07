@@ -14,7 +14,8 @@
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\theme.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\searchHelper.ts",
         "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\home.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\Storage.ts"
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\Storage.ts",
+        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\wiki.ts"
     ],
     "lib": [
         {

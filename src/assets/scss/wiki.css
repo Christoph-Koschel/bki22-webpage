@@ -1,0 +1,46 @@
+div[page=p3] div.content {
+  position: absolute;
+  display: flex;
+}
+div[page=p3] div.content div.side-bar {
+  width: 320px;
+  min-height: calc(100vh - 62.667px);
+  background: var(--color-light);
+}
+div[page=p3] div.content div.side-bar > div {
+  padding: 20px;
+}
+div[page=p3] div.content div.side-bar > div h3 {
+  margin: 0;
+  text-align: center;
+}
+div[page=p3] div.content div.side-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+div[page=p3] div.content div.side-bar ul li {
+  cursor: default;
+  padding: 5px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 0.4s;
+}
+div[page=p3] div.content div.side-bar ul li.active {
+  background: var(--color-primary);
+}
+div[page=p3] div.content div.side-bar ul li:hover {
+  background: var(--color-dark-hover);
+}
+div[page=p3] div.content div#current-page {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  width: calc(100% - 320px);
+  overflow: hidden;
+  min-height: calc(100vh - 62.667px);
+}
+
+/*# sourceMappingURL=wiki.css.map */

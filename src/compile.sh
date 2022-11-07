@@ -32,10 +32,14 @@ mkdir $distPath/assets/php
 echo mkdir $distPath/assets/json
 mkdir $distPath/assets/json
 
+echo mkdir $distPath/assets/templates
+mkdir $distPath/assets/templates
+
 echo Copy files
 
 echo "*.html"
 cp $srcPath/*.html $distPath
+cp $srcPath/assets/templates/*.html $distPath/assets/templates
 
 echo images
 cp $srcPath/assets/image/*.* $distPath/assets/image

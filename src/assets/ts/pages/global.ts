@@ -1,6 +1,7 @@
 import {parseTemplate} from "../xmlParser";
 import {change_location} from "../rout";
 import {R} from "../utils";
+import {Storage} from "../Storage";
 
 export function buildNavBar(current: string): HTMLElement {
     let struct = `
@@ -21,10 +22,11 @@ export function buildNavBar(current: string): HTMLElement {
     let navbar = root.querySelector("div.navbar");
     navbar.appendChild(buildItem("Home", R.PAGES.HOME, R.PAGES.HOME == current));
     navbar.appendChild(buildItem("Globale Suche", R.PAGES.GLOBAL_SEARCH, R.PAGES.GLOBAL_SEARCH == current));
+    navbar.appendChild(buildItem("Wiki", R.PAGES.WIKI, R.PAGES.WIKI == current));
     navbar.appendChild(buildItem("Einstellungen", R.PAGES.SETTINGS, R.PAGES.SETTINGS == current));
 
     let fake = <HTMLElement>root.querySelector("div.fake-navbar");
-    fake.style.height = "90px";
+    fake.style.height = "62.667px";
 
     return root;
 }
@@ -63,4 +65,14 @@ export function buildBrand(): HTMLElement {
         window.open("https://github.com/Christoph-Koschel/bki22-webpage", "_blank");
     });
     return root;
+}
+
+export function checkRequirements(current: string): boolean {
+    if (!Storage.require(R.ID.SEARCH_TABLE, R.ID.WIKI_DATA)) {
+        console.log(current);
+        change_location(R.PAGES.DEFAULT_ROOT, true, "b=" + current);
+        return false;
+    }
+
+    return true;
 }
