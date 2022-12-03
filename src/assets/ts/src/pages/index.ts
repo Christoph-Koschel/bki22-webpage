@@ -1,6 +1,6 @@
 import {change_location, RoutEvent} from "../rout";
 import {parseTemplate} from "../xmlParser";
-import {DB_DATA, html_escape, isPage, QUERY, R} from "../utils";
+import {DB_DATA, html_escape, isPage, QUERY, REF} from "../utils";
 import {buildBrand} from "./global";
 import {Storage} from "../Storage";
 import {WikiPage, WikiResolvePage} from "../types";
@@ -9,7 +9,7 @@ export function index_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page";
 
     let root = document.createElement("div");
-    root.setAttribute("page", R.PAGES.DEFAULT_ROOT);
+    root.setAttribute("page", REF.PAGES.DEFAULT_ROOT);
     root.appendChild(buildLogo());
     root.appendChild(buildAnimation());
     root.appendChild(buildTitle());
@@ -19,7 +19,7 @@ export function index_page(e: RoutEvent): HTMLElement {
         if (QUERY().has("b") && isPage(QUERY().get("b"))) {
             change_location(QUERY().get("b"), true);
         } else {
-            change_location(R.PAGES.HOME, false);
+            change_location(REF.PAGES.HOME, false);
         }
     });
 
@@ -29,19 +29,19 @@ export function index_page(e: RoutEvent): HTMLElement {
 async function fetch_data() {
     writeTitle("Überprüfe Daten");
 
-    if (!Storage.contains(R.ID.SEARCH_TABLE)) {
+    if (!Storage.contains(REF.ID.SEARCH_TABLE)) {
         writeTitle("Lade Datenbank herunter...");
         let formData: FormData = new FormData();
         formData.append("file", "json/data.json");
         let str: string = await doRequest("assets/php/fetch.php", formData);
         try {
-            Storage.alloc(R.ID.SEARCH_TABLE, JSON.parse(str));
+            Storage.alloc(REF.ID.SEARCH_TABLE, JSON.parse(str));
         } catch (err) {
 
         }
     }
 
-    if (!Storage.contains(R.ID.WIKI_DATA)) {
+    if (!Storage.contains(REF.ID.WIKI_DATA)) {
         writeTitle("Lade Wiki-Header herunter...");
         let formData = new FormData();
         formData.append("file", "json/wiki.json");
@@ -61,7 +61,7 @@ async function fetch_data() {
                     struct: str
                 });
             }
-            Storage.alloc(R.ID.WIKI_DATA, result);
+            Storage.alloc(REF.ID.WIKI_DATA, result);
         } catch (err) {
 
         }

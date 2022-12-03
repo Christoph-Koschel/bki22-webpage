@@ -1,0 +1,13 @@
+{
+    "name": "bki-22",
+    "author": "Christoph Koschel",
+    "version": "1.0.0",
+    "license": "MIT",
+    "dependencies": [
+        {
+            "name": "code-database",
+            "version": "1.0.0",
+            "resolve": "..\\..\\..\\..\\..\\bun\\code-database\\code-database-1-0-0.yapm.tar"
+        }
+    ]
+}

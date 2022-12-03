@@ -1,5 +1,5 @@
 import {Callback} from "./types";
-import {parseQuery, QUERY, R} from "./utils";
+import {parseQuery, QUERY, REF} from "./utils";
 
 export interface RoutEvent {
     dm: DocumentModel
@@ -64,8 +64,8 @@ window.onpopstate = () => {
             dm: createEmptyDocumentModel()
         });
     } else {
-        key = R.PAGES.DEFAULT_ROOT;
-        root = Rout.emit(R.PAGES.DEFAULT_ROOT, {
+        key = REF.PAGES.DEFAULT_ROOT;
+        root = Rout.emit(REF.PAGES.DEFAULT_ROOT, {
             dm: createEmptyDocumentModel()
         });
     }
@@ -78,7 +78,7 @@ export function change_location(key: string | null, rerender: boolean, ...args: 
     let app = document.getElementById("app");
 
     if (key == null) {
-        key = R.PAGES.DEFAULT_ROOT;
+        key = REF.PAGES.DEFAULT_ROOT;
     }
 
     if (rerender) {
@@ -99,9 +99,9 @@ export function change_location(key: string | null, rerender: boolean, ...args: 
         app.appendChild(newRoot);
         parseDocumentModel(Rout.getDM(key));
     }
-    let url = window.location.origin + window.location.pathname + (key == R.PAGES.DEFAULT_ROOT ? "" : "?r=" + key);
+    let url = window.location.origin + window.location.pathname + (key == REF.PAGES.DEFAULT_ROOT ? "" : "?r=" + key);
     if (args.length != 0) {
-        url += key == R.PAGES.DEFAULT_ROOT ? "?" : "&";
+        url += key == REF.PAGES.DEFAULT_ROOT ? "?" : "&";
         url += args.join("&");
     }
 

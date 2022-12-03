@@ -1,17 +1,17 @@
 import {RoutEvent} from "../rout";
 import {buildNavBar, checkRequirements} from "./global";
-import {R, WIKI_DATA} from "../utils";
+import {REF, WIKI_DATA} from "../utils";
 import {parseTemplate} from "../xmlParser";
 
 export function wiki_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Wiki";
-    if (!checkRequirements(R.PAGES.WIKI)) {
+    if (!checkRequirements(REF.PAGES.WIKI)) {
         return;
     }
 
     let root = document.createElement("div");
-    root.setAttribute("page", R.PAGES.WIKI);
-    root.appendChild(buildNavBar(R.PAGES.WIKI));
+    root.setAttribute("page", REF.PAGES.WIKI);
+    root.appendChild(buildNavBar(REF.PAGES.WIKI));
 
     let content = document.createElement("div");
     content.classList.add("content");

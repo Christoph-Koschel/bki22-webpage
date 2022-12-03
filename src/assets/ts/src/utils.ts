@@ -1,4 +1,4 @@
-import {_R, DataGroup, DBData, EscapeTable, WikiResolvePage} from "./types";
+import {REFType, DataGroup, DBData, EscapeTable, WikiResolvePage} from "./types";
 import {Storage} from "./Storage";
 
 export const ESCAPE_TABLE: EscapeTable[] = [
@@ -18,11 +18,12 @@ function next() {
     return "p" + (pageID++);
 }
 
-export const R: _R = {
+export const REF: REFType = {
     GROUPS: {
         SWITCH: "switch",
         ROUTER: "router",
         LINUX: "linux",
+        WINDOWS: "windows",
         JAVA: "java",
         CISCO: "cisco",
         CLI: "cli",
@@ -102,8 +103,8 @@ export function html_escape(x: string): string {
 
 export function allGroup(): DataGroup[] {
     let result = [];
-    Object.keys(R.GROUPS).forEach(value => {
-        result.push(R.GROUPS[value]);
+    Object.keys(REF.GROUPS).forEach(value => {
+        result.push(REF.GROUPS[value]);
     });
     return result;
 }
@@ -114,8 +115,8 @@ export function isGroup(x: string): boolean {
 
 export function allPages(): string[] {
     let result = [];
-    Object.keys(R.PAGES).forEach((value) => {
-        result.push(R.PAGES[value]);
+    Object.keys(REF.PAGES).forEach((value) => {
+        result.push(REF.PAGES[value]);
     });
 
     return result;
@@ -133,11 +134,11 @@ export function parseQuery(x: string) {
         p.set(key, value);
     });
 
-    Storage.alloc(R.ID.QUERY, p);
+    Storage.alloc(REF.ID.QUERY, p);
 }
 
-export const DB_DATA = () => Storage.load<DBData[]>(R.ID.SEARCH_TABLE);
-export const QUERY = () => Storage.load<Map<string, string>>(R.ID.QUERY);
-export const WIKI_DATA = () => Storage.load<WikiResolvePage[]>(R.ID.WIKI_DATA);
+export const DB_DATA = () => Storage.load<DBData[]>(REF.ID.SEARCH_TABLE);
+export const QUERY = () => Storage.load<Map<string, string>>(REF.ID.QUERY);
+export const WIKI_DATA = () => Storage.load<WikiResolvePage[]>(REF.ID.WIKI_DATA);
 
 parseQuery(window.location.search);

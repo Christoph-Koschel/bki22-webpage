@@ -1,6 +1,6 @@
 import {parseTemplate} from "../xmlParser";
 import {change_location} from "../rout";
-import {R} from "../utils";
+import {REF} from "../utils";
 import {Storage} from "../Storage";
 
 export function buildNavBar(current: string): HTMLElement {
@@ -20,10 +20,10 @@ export function buildNavBar(current: string): HTMLElement {
 
     let root = parseTemplate(struct);
     let navbar = root.querySelector("div.navbar");
-    navbar.appendChild(buildItem("Home", R.PAGES.HOME, R.PAGES.HOME == current));
-    navbar.appendChild(buildItem("Globale Suche", R.PAGES.GLOBAL_SEARCH, R.PAGES.GLOBAL_SEARCH == current));
-    navbar.appendChild(buildItem("Wiki", R.PAGES.WIKI, R.PAGES.WIKI == current));
-    navbar.appendChild(buildItem("Einstellungen", R.PAGES.SETTINGS, R.PAGES.SETTINGS == current));
+    navbar.appendChild(buildItem("Home", REF.PAGES.HOME, REF.PAGES.HOME == current));
+    navbar.appendChild(buildItem("Globale Suche", REF.PAGES.GLOBAL_SEARCH, REF.PAGES.GLOBAL_SEARCH == current));
+    navbar.appendChild(buildItem("Wiki", REF.PAGES.WIKI, REF.PAGES.WIKI == current));
+    navbar.appendChild(buildItem("Einstellungen", REF.PAGES.SETTINGS, REF.PAGES.SETTINGS == current));
 
     let fake = <HTMLElement>root.querySelector("div.fake-navbar");
     fake.style.height = "62.667px";
@@ -68,9 +68,9 @@ export function buildBrand(): HTMLElement {
 }
 
 export function checkRequirements(current: string): boolean {
-    if (!Storage.require(R.ID.SEARCH_TABLE, R.ID.WIKI_DATA)) {
+    if (!Storage.require(REF.ID.SEARCH_TABLE, REF.ID.WIKI_DATA)) {
         console.log(current);
-        change_location(R.PAGES.DEFAULT_ROOT, true, "b=" + current);
+        change_location(REF.PAGES.DEFAULT_ROOT, true, "b=" + current);
         return false;
     }
 

@@ -1,17 +1,17 @@
-import {parseQuery, QUERY, R} from "./utils";
+import {parseQuery, QUERY, REF} from "./utils";
 import {createEmptyDocumentModel, Rout} from "./rout";
-import {index_page} from "./pages/index";
+import {index_page} from "./pages";
 import {global_search_page} from "./pages/global_search";
 import {settings_page} from "./pages/settings";
 import {isDarkMode} from "./theme";
 import {home_page} from "./pages/home";
 import {wiki_page} from "./pages/wiki";
 
-Rout.register(R.PAGES.DEFAULT_ROOT, index_page);
-Rout.register(R.PAGES.HOME, home_page);
-Rout.register(R.PAGES.GLOBAL_SEARCH, global_search_page);
-Rout.register(R.PAGES.SETTINGS, settings_page);
-Rout.register(R.PAGES.WIKI, wiki_page);
+Rout.register(REF.PAGES.DEFAULT_ROOT, index_page);
+Rout.register(REF.PAGES.HOME, home_page);
+Rout.register(REF.PAGES.GLOBAL_SEARCH, global_search_page);
+Rout.register(REF.PAGES.SETTINGS, settings_page);
+Rout.register(REF.PAGES.WIKI, wiki_page);
 
 window.addEventListener("load", () => {
     let root;
@@ -29,8 +29,8 @@ window.addEventListener("load", () => {
         });
     } else {
         console.log("Use default");
-        key = R.PAGES.DEFAULT_ROOT;
-        root = Rout.emit(R.PAGES.DEFAULT_ROOT, {
+        key = REF.PAGES.DEFAULT_ROOT;
+        root = Rout.emit(REF.PAGES.DEFAULT_ROOT, {
             dm: createEmptyDocumentModel()
         });
         console.log(root);

@@ -1,6 +1,71 @@
-import {DataGroup, DBData, SearchResultParameter} from "./types";
-import {arr_contains_count, DB_DATA, html_escape, isGroup, string_contains_count} from "./utils";
-import {select} from "./lib/code-database/linq";
+import {RoutEvent} from "../rout";
+import {buildNavBar, checkRequirements} from "./global";
+import {parseTemplate} from "../xmlParser";
+import {arr_contains_count, DB_DATA, html_escape, isGroup, REF, string_contains_count} from "../utils";
+import {DataGroup, DBData, SearchResultParameter} from "../types";
+import {select} from "@yapm/code-database/1.0.0/linq";
+
+export function global_search_page(e: RoutEvent): HTMLElement {
+    e.dm.title = "Work-Page | Search";
+    if (!checkRequirements(REF.PAGES.GLOBAL_SEARCH)) {
+        return;
+    }
+    let root = document.createElement("div");
+    root.setAttribute("page", REF.PAGES.GLOBAL_SEARCH);
+
+    root.appendChild(buildNavBar(REF.PAGES.GLOBAL_SEARCH));
+    root.appendChild(buildSearchPanel());
+    root.appendChild(buildResultPanel());
+
+    return root;
+}
+
+let table: HTMLElement | null = null;
+
+function buildSearchPanel(): HTMLElement {
+    let struct = `
+        <div class="pt-50">
+            <input placeholder="Keywords, Name, Group" />
+        </div>
+    `;
+
+    let root = parseTemplate(struct);
+
+    let input = root.querySelector("input");
+    input.addEventListener("keyup", () => {
+        console.log("x");
+        if (table == null) {
+            return;
+        }
+        console.log("y");
+
+        if (input.value == "") {
+            filterData(table, DB_DATA(), null);
+        } else {
+            let keywords = input.value.toLowerCase().split(" ");
+            console.log(keywords);
+            filterData(table, DB_DATA(), keywords);
+        }
+    });
+
+    return root;
+}
+
+function buildResultPanel(): HTMLElement {
+    let struct = `
+        <div class="pb-50">
+            <h3><text>Such Ergebnis</text></h3>
+            <table class="border result-table">
+            
+            </table>
+        </div>
+    `
+    let root = parseTemplate(struct);
+
+    table = root.querySelector("table");
+    filterData(table, DB_DATA(), null);
+    return root;
+}
 
 function dataHeader(ele: HTMLElement) {
     let tr = document.createElement("tr");

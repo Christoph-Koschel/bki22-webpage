@@ -1,16 +1,16 @@
 import {change_location, RoutEvent} from "../rout";
 import {buildBrand, checkRequirements} from "./global";
 import {parseTemplate} from "../xmlParser";
-import {R} from "../utils";
+import {REF} from "../utils";
 
 export function home_page(e: RoutEvent) {
     e.dm.title = "Work-Page | Home";
-    if (!checkRequirements(R.PAGES.HOME)) {
+    if (!checkRequirements(REF.PAGES.HOME)) {
         return;
     }
 
     let root = document.createElement("div");
-    root.setAttribute("page", R.PAGES.HOME);
+    root.setAttribute("page", REF.PAGES.HOME);
     root.classList.add("container");
 
     root.appendChild(buildHeader());
@@ -52,7 +52,7 @@ function buildTableContents(): HTMLElement {
         li.classList.add("text-hover", "c-default")
         li.innerHTML = "Globale Suche";
         li.addEventListener("click", () => {
-            change_location(R.PAGES.GLOBAL_SEARCH, false);
+            change_location(REF.PAGES.GLOBAL_SEARCH, false);
         });
         ul.appendChild(li);
     }
@@ -61,7 +61,7 @@ function buildTableContents(): HTMLElement {
         li.classList.add("text-hover", "c-default")
         li.innerHTML = "Wiki";
         li.addEventListener("click", () => {
-            change_location(R.PAGES.WIKI, false);
+            change_location(REF.PAGES.WIKI, false);
         });
         ul.appendChild(li);
     }
@@ -70,7 +70,7 @@ function buildTableContents(): HTMLElement {
         li.classList.add("text-hover", "c-default")
         li.innerHTML = "Einstellungen";
         li.addEventListener("click", () => {
-            change_location(R.PAGES.SETTINGS, false);
+            change_location(REF.PAGES.SETTINGS, false);
         });
         ul.appendChild(li);
     }

@@ -2,19 +2,19 @@ import {RoutEvent} from "../rout";
 import {buildNavBar, checkRequirements} from "./global";
 import {parseTemplate} from "../xmlParser";
 import {disableDarkMode, enableDarkMode, isDarkMode} from "../theme";
-import {R} from "../utils";
+import {REF} from "../utils";
 
 export function settings_page(e: RoutEvent): HTMLElement {
     e.dm.title = "Work-Page | Settings";
-    if (!checkRequirements(R.PAGES.SETTINGS)) {
+    if (!checkRequirements(REF.PAGES.SETTINGS)) {
         return;
     }
 
     let root = document.createElement("div");
-    root.setAttribute("page", R.PAGES.SETTINGS);
+    root.setAttribute("page", REF.PAGES.SETTINGS);
     root.classList.add("container");
 
-    root.appendChild(buildNavBar(R.PAGES.SETTINGS));
+    root.appendChild(buildNavBar(REF.PAGES.SETTINGS));
     root.appendChild(buildThemeManager());
 
     return root;

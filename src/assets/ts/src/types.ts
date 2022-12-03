@@ -7,7 +7,7 @@ export interface EscapeTable {
     replace: string
 }
 
-export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco" | "cli" | "others";
+export type DataGroup = "switch" | "router" | "linux" | "java" | "cisco" | "cli" | "others" | "windows";
 
 export interface DBDataArgument {
     key: string,
@@ -38,11 +38,12 @@ export interface WikiResolvePage {
     file: string
 }
 
-export type _R = {
+export type REFType = {
     GROUPS: {
         SWITCH: DataGroup,
         ROUTER: DataGroup,
         LINUX: DataGroup,
+        WINDOWS: DataGroup,
         JAVA: DataGroup,
         CISCO: DataGroup,
         CLI: DataGroup,

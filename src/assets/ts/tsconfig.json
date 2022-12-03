@@ -1,33 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es2020",
-        "module": "es2020",
-        "moduleResolution": "node",
-        "declaration": true,
-        "removeComments": true,
-        "outDir": "build/src",
-        "declarationDir": "build/header"
-        
-    },
-    "include": [
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\index.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\utils.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\types.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\rout.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\loader.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\index.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global_search.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\settings.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\global.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\xmlParser.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\theme.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\searchHelper.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\home.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\Storage.ts",
-        "E:\\langs\\web\\school-usb\\src\\assets\\ts\\pages\\wiki.ts"
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "declaration": true,
+    "removeComments": true,
+    "outDir": "build/src",
+    "declarationDir": "build/header",
+    "paths": {
+      "@yapm/*": ["./lib/*"]
+    }
 
-    ],
-    "exclude": [
-        "lib"
-    ]
+  },
+  "exclude": [
+    "lib",
+    "assets",
+    "node_modules"
+  ]
 }

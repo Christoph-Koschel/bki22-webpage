@@ -1,4 +1,4 @@
 dist
-src/assets/libs
+src/assets/ts/lib
 .idea
 build
