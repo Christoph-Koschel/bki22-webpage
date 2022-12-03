@@ -485,5 +485,48 @@
         "description": "Die zu öffnenden Dateien"
       }
     ]
+  },
+  {
+    "groups": [
+      "cli",
+      "windows"
+    ],
+    "description": "Killt einen Prozess",
+    "cmd": "taskkill",
+    "prefix": "PowerShell >",
+    "arguments": [
+      {
+        "key": "/im",
+        "description": "Alle Prozesse mit den Namen"
+      },
+      {
+        "key": "name",
+        "description": "Der Name"
+      }
+    ]
+  },
+  {
+    "groups": ["cli", "linux"],
+    "description": "Erstellt ein archive mit den angebenen inhalten",
+    "cmd": "tar",
+    "prefix": "user@pc-name: path/to/cwd $",
+    "arguments": [
+      {
+        "key": "-cvf",
+        "description": "Erstellt ein Archive mit unterodnern und gibt den Output aus"
+      }
+    ]
+  },
+  {
+    "groups": ["cli", "linux"],
+    "description": "Erstellt eine Gruppe",
+    "cmd": "groupadd",
+    "prefix": "user@pc-name: path/to/cwd $",
+    "arguments": [
+      {
+        "key": "name",
+        "description": "Name der Gruppe"
+      }
+    ]
   }
 ]

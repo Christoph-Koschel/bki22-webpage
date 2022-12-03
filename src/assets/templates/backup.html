@@ -1,0 +1,66 @@
+<div>
+	<h1><text>Backup system in Linux</text></h1>
+	<div class="container">
+		<ul>
+			<li><a href="#c1"><text>Grundbefehle</text></a></li>
+			<li><a href="#c2"><text>Menu bauen</text></a></li>
+			<li><a href="#c3"><text>Backup erstellen</text></a></li>
+		</ul>
+		<p><text>
+		In dieser Sektion erstellen wie ein kleines Backup system mit eine Simplen CLI-GUI 
+		was nur aus "echo"s und "read"s besteht
+		</text></p>
+
+		<h2 id="c1"><text>Grundbefehle</text></h2>
+		<table>
+			<tr>
+				<th><text>Befehl</text></th>
+				<th><text>Beschreibung</text></th>		
+			</tr>
+			<tr>
+				<td><text>echo &lt;msg></text></td>
+				<td><text>Gibt einen String an das Konsolen fenster aus</text></td>
+			</tr>
+			<tr>
+				<td><text>read [-p &lt;prefix>] &lt;var></text></td>
+				<td><text>Liest die eingabe von einem benutzer und speichert sie in die var wenn man vor der lesung noch was ausgeben möchten muss man einen Prefix setzen</text></td>
+			</tr>
+			<tr>
+				<td><text>tar [...options]</text></td>
+				<td><text>Wird zu zippen von dateien benutz (später kommen noch die optionen dazu)</text></td>
+			</tr>
+		</table>
+		<h2><text>Menu bauen</text></h2>
+		<p><text>
+			In dieser Sektion bauen wir das menu das einfache Hauptmenü<br />
+			Dafür geben wir einfach eine Simple reihe an "echo"s aus die allein eine ähnliche struktur habe<br />
+			Um das Shell-Script zu vereinfachen wrappen wir das gesamte Menu in eine Funktion die wir Menu nennen	
+		</text></p>
+		
+		<div class="code-block" lang="bash">
+			<pre><code><text>
+# ...
+function menu() {
+	echo "|------------------------|"
+	echo "|  Hauptmenu             |"
+	echo "|------------------------|"
+	echo "|  (1) Backup erstellen  |"
+	echo "|  (2) Backup restoren   |"
+	echo "|  (3) Backup listen     |"
+	read -p "|  Eingabe > " $CMD
+}				
+# ...
+			</text></code></pre>
+		</div>
+
+		<p><text>
+			Damit können wir nun jedes mal wenn wir die Funktion menu aufrufen. Die das Menu baut und<br />
+			die eingabe des User erwartet
+		</text></p>
+		<p><text>
+			Bauen sie nun die weiteren Menüs die sie brauchen<br />
+			Extrahieren sie diese alle in eine eigene Funktion!
+		</text></p>
+	</div>
+</div>
+

@@ -10,5 +10,9 @@
   {
     "title": "Innenleben vom PC",
     "file": "templates/pc_components.html"
+  },
+  {
+    "title": "Backup system",
+    "file": "templates/backup.html"
   }
 ]
